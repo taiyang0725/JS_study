@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>计时器</title>
+</head>
+<body>
+<button id="btn" onclick="myWin()">按钮</button>
+<p id="pid"></p>
+<script>
+    var myTime=setInterval(function(){
+        getTime();
+    },1000);
+    function getTime(){
+        var d=new Date();
+        var t= d.toLocaleTimeString();
+        document.getElementById("pid").innerHTML=t;
+    }
+    function stopTime(){
+        clearInterval(myTime);
+    }
+
+    var win;
+    function myWin(){
+        alert("hello")
+        win=setTimeout(function(){
+            myWin();
+        },3000);
+    }
+</script>
+</body>
+</html>

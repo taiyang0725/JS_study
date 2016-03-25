@@ -1,0 +1,20 @@
+.row {
+
+    margin-bottom: 20px;
+
+
+}
+
+.row.row {
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+
+[class*="col-"] {
+    padding-bottom: 15px;
+    padding-top: 15px;
+    background-color: #eee;
+    /*background-color: #eee;*/
+    /*border: 1px solid #E5E2EB;*/
+    border: 1px solid #E5E2EB;
+}

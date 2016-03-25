@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>对象</title>
+</head>
+<body onload="startTime()">
+
+<div id="time">
+</div>
+
+<div id="divId">
+    <p id="pid"> great wall</p>
+</div>
+<p name="pn">hello</p>
+<p name="pn">hello</p>
+<p name="pn">hello</p>
+<a id="aid" title="得到a标签的属性">hello</a>
+
+<script>
+    //    创建对象
+    /*
+     pepole=new Object();
+     pepole.name="im";
+     pepole.age="30";
+     document.write("name："+pepole.name);
+     */
+    //    pepole0 = {name: "im", age: "30"};
+    /*
+     function people(name, age) {
+     this.name = name;
+     this.age = age;
+     }
+     son = new people("im", "12")
+     document.write("name:"+son.name)
+     */
+    //    日期对象
+    /*
+     var date = new Date();
+     document.write(date.getFullYear()+":");
+     document.write(date.getMonth()+":");
+     document.write(date.getDay()+":");
+     document.write(date.getTime());
+     */
+    //    时钟
+    function startTime(){
+        var today=new Date();
+        var h=today.getHours();
+        var m=today.getMinutes();
+        var s=today.getSeconds();
+
+        m=checkTime(m);
+        s=checkTime(s);
+        document.getElementById("time").innerHTML=h+":"+m+":"+s;
+
+        t=setTimeout(function(){
+            startTime();
+        },1000);
+    }
+
+    function checkTime(t){
+        if(t<10){
+            t="0"+t;
+        }
+        return t;
+    }
+
+    function getName(){
+        var count=document.getElementsByTagName("p");
+        alert(count.length)
+        var p=c
+        ount[2]
+        p.innerHTML="world";
+    }
+
+    function getAtrr(){
+        var anode=document.getElementById("aid");
+        var attr=anode.getAttribute("title");
+        alert(attr)
+    }
+
+//    getAtrr();
+//创建节点
+    function createNode(){
+        var body=document.body;
+        var input=document.createElement("input");
+        input.type="button";
+        input.value="按钮";
+        body.appendChild(input);
+    }
+
+//    createNode();
+//    插入节点
+function insertNode(){
+    var div=document.getElementById("divId");
+    var node=document.getElementById("pid");
+    var newNode=document.createElement("p");
+    newNode.innerHTML="插入一个新节点";
+    div.insertBefore(newNode,node);
+}
+    insertNode();
+
+</script>
+
+
+</body>
+</html>
